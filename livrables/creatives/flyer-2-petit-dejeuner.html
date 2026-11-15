@@ -1,0 +1,58 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>flyer-2-petit-dejeuner</title><link rel="stylesheet" href="../../site/fonts/fonts.css"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:"Quicksand",system-ui,sans-serif;color:#3A2316;position:relative;
+  background:radial-gradient(120% 90% at 75% 45%,#FFD65A 0%,#F7B731 48%,#E9A23B 100%)}
+.rays{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 74% 58%,rgba(255,255,255,.13) 0 6deg,transparent 6deg 18deg)}
+.grain{position:absolute;inset:0;background-image:radial-gradient(rgba(58,35,22,.06) 1px,transparent 1px);background-size:4px 4px}
+.top{position:absolute;left:72px;top:64px;right:72px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Bowlby One",sans-serif;font-size:36px;line-height:.88;color:#C8232C;text-transform:uppercase}
+.logo small{display:block;font-size:.42em;color:#3A2316;letter-spacing:.14em}
+.badge{background:#3A2316;color:#FFF6E0;border-radius:999px;padding:12px 26px;font-size:23px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+h1{position:absolute;left:72px;top:150px;font-family:"Bowlby One",sans-serif;line-height:.98;text-transform:uppercase;color:#3A2316;text-shadow:0 6px 0 #FFF6E0}
+h1 em{font-style:normal;color:#C8232C}
+.sub{position:absolute;left:72px;font-size:33px;line-height:1.35;font-weight:600}
+.sub b{font-weight:700;color:#C8232C}
+.chip{position:absolute;background:#FFF6E0;border-radius:999px;padding:12px 24px;font-size:24px;font-weight:700;box-shadow:0 6px 0 #3A2316;white-space:nowrap}
+.card{position:absolute;background:#FFF6E0;border-radius:28px;box-shadow:0 12px 0 #3A2316;padding:28px 32px}
+.card .t{font-size:23px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C8232C}
+.spark{position:absolute;width:28px;height:28px;background:#FFF6E0;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.disc{position:absolute;border-radius:50%}
+.acc{position:relative;display:inline-block}
+.acc::after{content:"";position:absolute;left:30%;top:-.02em;width:.34em;height:.11em;background:currentColor;border-radius:.05em;transform:rotate(-24deg);box-shadow:0 .06em 0 #FFF6E0}
+.offre{position:absolute;left:72px;right:72px;top:508px;background:#3A2316;border-radius:26px;padding:22px 30px;text-align:center;box-shadow:0 10px 0 #C8232C;font-family:"Bowlby One",sans-serif;font-size:50px;line-height:1;color:#FFD65A;text-transform:uppercase}
+/* Bandeau du bas : image fixe, donc pas de bouton ni d'adresse */
+.foot{position:absolute;left:0;right:0;bottom:0;height:190px;background:#3A2316;display:flex;align-items:center;justify-content:space-between;padding:0 72px;gap:28px}
+.foot .site{font-family:"Bowlby One",sans-serif;color:#FFF6E0;font-size:34px;line-height:1.08;text-transform:uppercase;white-space:nowrap}
+.foot .pay{flex:none;background:#C8232C;color:#FFF6E0;border-radius:22px;padding:18px 28px;text-align:center;transform:rotate(-2deg);box-shadow:0 8px 0 #F7B731}
+.foot .pay b{display:block;font-family:"Bowlby One",sans-serif;font-weight:400;font-size:31px;line-height:1;text-transform:uppercase}
+.foot .pay span{display:block;font-size:21px;font-weight:700;margin-top:6px}
+/* Groupe de produits posés (sans sac) */
+.groupe{position:absolute}
+.groupe img{position:absolute;filter:drop-shadow(0 14px 14px rgba(58,35,22,.32))}
+.groupe .ombre{position:absolute;left:6%;right:6%;bottom:-14px;height:40px;border-radius:50%;background:radial-gradient(rgba(58,35,22,.35),transparent 70%)}
+/* Sac de courses */
+.bag{position:absolute}
+.bag .back{position:absolute;left:4%;right:4%;border-radius:10px 10px 0 0;background:linear-gradient(#A8763E,#B9864C)}
+.bag .handle{position:absolute;z-index:1}
+.bag .item{position:absolute;filter:drop-shadow(0 10px 10px rgba(58,35,22,.3));z-index:2}
+.bag .front{position:absolute;left:0;bottom:0;z-index:5;filter:drop-shadow(0 26px 26px rgba(58,35,22,.35))}
+
+.foot .map{flex:none;display:flex;align-items:center;gap:18px;background:#FFF6E0;border-radius:22px;padding:12px 26px 12px 12px;transform:rotate(-2deg);box-shadow:0 8px 0 #C8232C}
+.foot .map b{display:block;font-family:"Bowlby One",sans-serif;font-weight:400;font-size:28px;line-height:1.35;color:#3A2316;text-transform:uppercase}
+.foot .map span{display:block;font-size:20px;font-weight:700;color:#C8232C;margin-top:6px}
+</style></head><body><div class="rays"></div><div class="grain"></div><div class="top"><div class="logo">Timaini<small>Les courses</small></div><div class="badge">Petit-déjeuner</div></div><h1 style="font-size:96px;line-height:1.2;width:940px">Vos courses<br><em>livr<span class="acc">e</span>es<br>chez vous.</em></h1><div class="offre">Vous payez à la réception</div><span class="disc" style="left:290px;top:660px;width:500px;height:500px;background:#3A2316"></span><div class="groupe" style="left:250px;top:630px;width:580px;height:510px"><span class="ombre"></span><img src="assets/sirop-peche.webp" style="left:18%;bottom:130px;height:340px;transform:translateX(-50%) rotate(-8deg);z-index:1"><img src="assets/milo-boite-1-5kg.webp" style="left:80%;bottom:110px;height:320px;transform:translateX(-50%) rotate(7deg);z-index:1"><img src="assets/malta-canette.webp" style="left:50%;bottom:150px;height:270px;transform:translateX(-50%) rotate(0deg);z-index:1"><img src="assets/nutella-pot.webp" style="left:32%;bottom:0px;height:270px;transform:translateX(-50%) rotate(-4deg);z-index:3"><img src="assets/indomie-oignon-poulet.webp" style="left:70%;bottom:0px;height:240px;transform:translateX(-50%) rotate(5deg);z-index:3"></div><span class="spark" style="left:230px;top:700px"></span><span class="spark" style="left:830px;top:740px;width:18px;height:18px"></span><div class="foot"><div class="site">Faites vos courses<br>sur notre site</div><div class="map"><svg width="150" height="124" viewBox="0 0 150 124">
+<defs><clipPath id="r"><rect width="150" height="124" rx="16"/></clipPath></defs>
+<g clip-path="url(#r)">
+<rect width="150" height="124" fill="#F1E3C6"/>
+<path d="M-10 92 C30 80 50 100 80 88 S130 70 160 78" stroke="#8EC5E8" stroke-width="9" fill="none"/>
+<circle cx="118" cy="30" r="20" fill="#B9D99A"/><rect x="10" y="12" width="34" height="22" rx="5" fill="#B9D99A"/>
+<path d="M0 50 L150 42 M58 0 L70 124 M0 112 L150 104 M104 0 L96 124" stroke="#FFFFFF" stroke-width="7"/>
+<path d="M0 50 L150 42 M58 0 L70 124" stroke="#F7B731" stroke-width="3"/>
+<path d="M20 0 L36 124 M128 0 L140 124" stroke="#FFFFFF" stroke-width="4"/>
+</g>
+<g transform="translate(64 24)">
+<ellipse cx="11" cy="58" rx="12" ry="4" fill="rgba(58,35,22,.3)"/>
+<path d="M11 0 C24 0 30 10 30 19 C30 32 11 56 11 56 C11 56 -8 32 -8 19 C-8 10 -2 0 11 0 Z" fill="#C8232C" stroke="#3A2316" stroke-width="2.5"/>
+<circle cx="11" cy="19" r="7" fill="#FFF6E0"/></g>
+<rect x=".5" y=".5" width="149" height="123" rx="16" fill="none" stroke="#3A2316" stroke-width="3"/></svg><div><b>Livraison<br>à Yaoundé</b><span>Espèces ou mobile money</span></div></div></div></body></html>

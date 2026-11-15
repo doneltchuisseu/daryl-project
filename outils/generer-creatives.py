@@ -176,7 +176,66 @@ C["offre-4-on-porte"] = (
         ("nido-boite-2-5kg", 26, 0, 220, -4, 3), ("milo-boite-1-5kg", 74, 0, 210, 5, 3)])
     + foot())
 
+
+# ===== FLYERS (3) : même style, produits centrés, carte de Yaoundé en bas =====
+CSS_FLYER = """
+.foot .map{flex:none;display:flex;align-items:center;gap:18px;background:#FFF6E0;border-radius:22px;padding:12px 26px 12px 12px;transform:rotate(-2deg);box-shadow:0 8px 0 #C8232C}
+.foot .map b{display:block;font-family:"Bowlby One",sans-serif;font-weight:400;font-size:28px;line-height:1.35;color:#3A2316;text-transform:uppercase}
+.foot .map span{display:block;font-size:20px;font-weight:700;color:#C8232C;margin-top:6px}
+"""
+
+CARTE = """<svg width="150" height="124" viewBox="0 0 150 124">
+<defs><clipPath id="r"><rect width="150" height="124" rx="16"/></clipPath></defs>
+<g clip-path="url(#r)">
+<rect width="150" height="124" fill="#F1E3C6"/>
+<path d="M-10 92 C30 80 50 100 80 88 S130 70 160 78" stroke="#8EC5E8" stroke-width="9" fill="none"/>
+<circle cx="118" cy="30" r="20" fill="#B9D99A"/><rect x="10" y="12" width="34" height="22" rx="5" fill="#B9D99A"/>
+<path d="M0 50 L150 42 M58 0 L70 124 M0 112 L150 104 M104 0 L96 124" stroke="#FFFFFF" stroke-width="7"/>
+<path d="M0 50 L150 42 M58 0 L70 124" stroke="#F7B731" stroke-width="3"/>
+<path d="M20 0 L36 124 M128 0 L140 124" stroke="#FFFFFF" stroke-width="4"/>
+</g>
+<g transform="translate(64 24)">
+<ellipse cx="11" cy="58" rx="12" ry="4" fill="rgba(58,35,22,.3)"/>
+<path d="M11 0 C24 0 30 10 30 19 C30 32 11 56 11 56 C11 56 -8 32 -8 19 C-8 10 -2 0 11 0 Z" fill="#C8232C" stroke="#3A2316" stroke-width="2.5"/>
+<circle cx="11" cy="19" r="7" fill="#FFF6E0"/></g>
+<rect x=".5" y=".5" width="149" height="123" rx="16" fill="none" stroke="#3A2316" stroke-width="3"/></svg>"""
+
+
+def foot_carte():
+    return ('<div class="foot"><div class="site">Faites vos courses<br>sur notre site</div>'
+            f'<div class="map">{CARTE}<div><b>Livraison<br>à Yaoundé</b><span>Espèces ou mobile money</span></div></div></div>')
+
+
+def flyer(badge, couleur, items):
+    """Offre en haut, produits centrés et agrandis sur un grand cercle, carte en bas."""
+    return (top(badge) + offre()
+            + f'<span class="disc" style="left:290px;top:660px;width:500px;height:500px;background:{couleur}"></span>'
+            + groupe(250, 630, 580, 510, items)
+            + '<span class="spark" style="left:230px;top:700px"></span>'
+              '<span class="spark" style="left:830px;top:740px;width:18px;height:18px"></span>'
+            + foot_carte())
+
+
+F = {
+    "flyer-1-quotidien": flyer("Yaoundé · 7 j/7", "#C8232C", [
+        ("tangui-1-5l", 14, 120, 380, -8, 1), ("azur-huile-1l", 86, 120, 370, 8, 1),
+        ("sirop-fraise", 32, 140, 320, -3, 1), ("jus-orange-1l", 68, 140, 320, 4, 1),
+        ("nido-boite-2-5kg", 50, 30, 320, 0, 3),
+        ("malta-canette", 20, 0, 240, -6, 4), ("heinz-ketchup-907g", 80, 0, 250, 6, 4)]),
+    "flyer-2-petit-dejeuner": flyer("Petit-déjeuner", "#3A2316", [
+        ("sirop-peche", 18, 130, 340, -8, 1), ("milo-boite-1-5kg", 80, 110, 320, 7, 1),
+        ("malta-canette", 50, 150, 270, 0, 1),
+        ("nutella-pot", 32, 0, 270, -4, 3), ("indomie-oignon-poulet", 70, 0, 240, 5, 3)]),
+    "flyer-3-produits-lourds": flyer("Rien à porter", "#C8232C", [
+        ("supermont-10l", 18, 110, 390, -7, 1), ("taj-mahal-xxxl-5kg", 82, 110, 370, 7, 1),
+        ("azur-huile-5l", 50, 90, 320, 0, 2),
+        ("nido-boite-2-5kg", 28, 0, 260, -4, 3), ("milo-boite-1-5kg", 72, 0, 250, 5, 3)]),
+}
+
 if __name__ == "__main__":
     for nom, html in C.items():
         (OUT / f"{nom}.html").write_text(page(nom, html), encoding="utf-8")
+        print("écrit", nom)
+    for nom, html in F.items():
+        (OUT / f"{nom}.html").write_text(page(nom, html).replace("</style>", CSS_FLYER + "</style>"), encoding="utf-8")
         print("écrit", nom)
